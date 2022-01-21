@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#f5f5f5">
+	<title>SkyNet - SpeedTest</title>
+	<meta name="description" content="An HTML 5 speed test." />
+	
+	<link rel="stylesheet" href="./css/app.css">
+	<link rel="stylesheet" href="./css/gauge.css">
+	<link rel="stylesheet" href="./css/style.css">
+
+	<link rel="manifest" href="./assets/manifest.json">
+	<link rel="icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+	<div id="main">
+		<header>
+			<h1>
+				<a href="/">
+					<span id="logo" class="logo"></span>
+					<span id="title">SkyNet</span>
+				</a>
+			</h1>
+
+			<nav id="commands">
+				<a id="show-about" class="btn-link" href="about" title="Get information about this speed test"><i
+						class="icon icon-info"></i></a>
+				<a id="results-history" class="btn-link" href="results" title="History of previous results"><i
+						class="icon icon-history"></i></a>
+				<a id="show-settings" class="btn-link" href="settings" title="Configure the speed test settings"><i
+						class="icon icon-cog"></i></a>
+			</nav>
+		</header>
+
+		<section id="alerts">
+			<div id="ie-alert" class="alert alert-warning alert-dismissible" hidden>
+				<span class="message">Internet Explorer is not a <a href="about#supported-browsers">suported
+						browser</a>.</span>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+			</div>
+			<div id="unknown-results-alert" class="alert alert-error alert-dismissible" hidden>
+				<span class="message">No corresponding results were found in the server.</span>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+			</div>
+		</section>
+
+
+		
+
+			
+	</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="./js/site.js"></script>
+
+</html>

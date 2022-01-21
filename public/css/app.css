@@ -1,0 +1,875 @@
+@charset "UTF-8";
+:root {
+  --blue: #007bff;
+  --darkBlue: #0056b3;
+  --red: #dc3545;
+  --darkRed: #c82333;
+  --phoneColor: #494f54;
+  --phoneColorDark: #25282b;
+  --screenColor: #f5f5f5;
+  --screenColorDark: #e8e8e8;
+  --backgroundColor: #1a1a1a;
+  --backgroundAltColor: #303030;
+  --textColor: white;
+  --primaryColor: #cccccc;
+  --borderColor: #dee2e6;
+  --fontFamilySansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontFamilyMonospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontSize: 1em;
+}
+
+::selection {
+  background: var(--blue);
+  color: white;
+}
+
+html.light {
+  --backgroundColor: white;
+  --backgroundAltColor: whitesmoke;
+  --textColor: black;
+  --primaryColor: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.d-none {
+  display: none;
+}
+
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+button, .btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  background: var(--blue);
+  color: white;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+button.btn-lg, .btn.btn-lg {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
+}
+button:hover, button:focus, .btn:hover, .btn:focus {
+  background: var(--darkBlue);
+}
+button.btn-danger, .btn.btn-danger {
+  background: var(--red);
+}
+button.btn-danger:hover, button.btn-danger:focus, .btn.btn-danger:hover, .btn.btn-danger:focus {
+  background: var(--darkRed);
+}
+
+a, .btn-link {
+  background: transparent;
+  border: 0;
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+a:hover, a:focus, .btn-link:hover, .btn-link:focus {
+  background: transparent;
+  color: var(--darkBlue);
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  text-align: left;
+  border-top: 1px solid var(--borderColor);
+}
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  border: 0;
+}
+
+.field {
+  display: flex;
+  min-height: 48px;
+  line-height: 2.5em;
+  align-items: center;
+}
+.field > label {
+  min-width: 100px;
+  margin-right: 1em;
+}
+.field > div > select {
+  width: 100%;
+}
+.field input[type=checkbox] + label, .field input[type=radio] + label {
+  margin-right: 1em;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: inherit;
+  color: inherit;
+  white-space: normal;
+}
+
+label {
+  display: inline-block;
+}
+
+select,
+input[type=text],
+input[type=number] {
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #303030;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  -webkit-appearance: none;
+  position: relative;
+}
+
+input[type=checkbox]:before,
+input[type=radio]:before {
+  display: inline-block;
+  content: " ";
+  width: 14px;
+  height: 14px;
+  border: 2px solid;
+  border-color: var(--blue);
+}
+
+input[type=checkbox]:checked:after,
+input[type=radio]:checked:after {
+  display: inline-block;
+  content: " ";
+  position: absolute;
+  bottom: 7px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+}
+
+input[type=checkbox]:checked:after {
+  border: solid var(--blue);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  bottom: 7px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+}
+
+input[type=radio]:checked:after {
+  background: var(--blue);
+}
+
+input[type=radio]:before,
+input[type=radio]:after {
+  border-radius: 100%;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.input-group input {
+  flex: 1 1 auto;
+  width: 1%;
+}
+.input-group :not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group .input-group-append {
+  display: flex;
+  margin-left: -1px;
+}
+.input-group .input-group-append * {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+@font-face {
+  font-display: auto;
+  font-family: "icons";
+  src: url("./icons/icons.eot");
+  src: url("./icons/icons.eot#iefix") format("embedded-opentype"), url("./icons/icons.woff2") format("woff2"), url("./icons/icons.woff") format("woff"), url("./icons/icons.ttf") format("truetype"), url("./icons/icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.icon:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cog:before {
+  content: "\e805";
+}
+
+/* '' */
+.icon-download:before {
+  content: "\e800";
+}
+
+/* '' */
+.icon-history:before {
+  content: "\f1da";
+}
+
+/* '' */
+.icon-info:before {
+  content: "\e804";
+}
+
+/* '' */
+.icon-jitter:before {
+  content: "\e803";
+}
+
+/* '' */
+.icon-latency:before {
+  content: "\e801";
+}
+
+/* '' */
+.icon-link:before {
+  content: "\f1e0";
+}
+
+/* '' */
+.icon-link2:before {
+  content: "\e806";
+}
+
+/* '' */
+.icon-trash:before {
+  content: "\f1f8";
+}
+
+/* '' */
+.icon-upload:before {
+  content: "\e802";
+}
+
+/* '' */
+.logo {
+  background-image: url("./images/logo.svg");
+}
+
+:root {
+  --blue: #007bff;
+  --darkBlue: #0056b3;
+  --red: #dc3545;
+  --darkRed: #c82333;
+  --phoneColor: #494f54;
+  --phoneColorDark: #25282b;
+  --screenColor: #f5f5f5;
+  --screenColorDark: #e8e8e8;
+  --backgroundColor: #1a1a1a;
+  --backgroundAltColor: #303030;
+  --textColor: white;
+  --primaryColor: #cccccc;
+  --borderColor: #dee2e6;
+  --fontFamilySansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontFamilyMonospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontSize: 1em;
+}
+
+::selection {
+  background: var(--blue);
+  color: white;
+}
+
+html.light {
+  --backgroundColor: white;
+  --backgroundAltColor: whitesmoke;
+  --textColor: black;
+  --primaryColor: #333333;
+}
+
+body {
+  background: var(--backgroundColor);
+  min-width: 320px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0px 2em;
+  font-family: var(--fontFamilySansSerif);
+  font-size: var(--fontSize);
+  color: var(--textColor);
+}
+@media only screen and (max-width: 360px) {
+  body {
+    padding: 0px 1em;
+    font-size: 0.9em;
+  }
+}
+
+section {
+  flex: 1;
+}
+
+header {
+  display: flex;
+  line-height: 6rem;
+}
+header h1 {
+  flex: 1;
+  margin: auto 0;
+}
+header h1 a, header h1 a:hover, header h1 a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+header h1 #logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 48px;
+}
+@media only screen and (max-width: 640px) {
+  header h1 #logo {
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+  }
+}
+header h1 #title {
+  font-size: 2.2rem;
+  vertical-align: middle;
+}
+@media only screen and (max-width: 640px) {
+  header h1 #title {
+    font-size: 1.6rem;
+  }
+}
+header #commands {
+  text-align: right;
+}
+header #commands i.icon {
+  font-size: 1.2em;
+}
+header #commands .btn-link {
+  padding: 0.375rem;
+}
+@media only screen and (max-width: 480px) {
+  header #commands .btn-link {
+    padding: 0.375rem 0;
+  }
+}
+
+#alerts .alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  line-height: 1.5em;
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 0.25rem;
+}
+#alerts .alert p {
+  margin: 0;
+}
+#alerts .alert button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  font-size: 1.5rem;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#alerts .alert button.close:hover, #alerts .alert button.close:focus {
+  color: #000;
+}
+
+.flex h2 {
+  flex: 1;
+}
+
+#settings .field.custom {
+  display: none;
+}
+#settings form.custom .field.custom {
+  display: block;
+}
+
+#save-confirmation {
+  opacity: 0;
+  padding: 0 1em;
+}
+#save-confirmation.fade {
+  animation: fade 4s forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+:root {
+  --blue: #007bff;
+  --darkBlue: #0056b3;
+  --red: #dc3545;
+  --darkRed: #c82333;
+  --phoneColor: #494f54;
+  --phoneColorDark: #25282b;
+  --screenColor: #f5f5f5;
+  --screenColorDark: #e8e8e8;
+  --backgroundColor: #1a1a1a;
+  --backgroundAltColor: #303030;
+  --textColor: white;
+  --primaryColor: #cccccc;
+  --borderColor: #dee2e6;
+  --fontFamilySansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontFamilyMonospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontSize: 1em;
+}
+
+::selection {
+  background: var(--blue);
+  color: white;
+}
+
+html.light {
+  --backgroundColor: white;
+  --backgroundAltColor: whitesmoke;
+  --textColor: black;
+  --primaryColor: #333333;
+}
+
+#history svg polyline {
+  fill: none;
+  stroke-width: 2px;
+}
+#history svg circle {
+  stroke-width: 0px;
+  transition: stroke-width 300ms;
+}
+#history svg circle.focus, #history svg circle:hover {
+  stroke-width: 2px;
+}
+#history svg text {
+  font-size: 10px;
+}
+#history svg #downloadChart circle, #history svg #downloadChart polyline {
+  stroke: #005BC0;
+}
+#history svg #downloadChart circle, #history svg #downloadChart text {
+  fill: #005BC0;
+}
+#history svg #uploadChart circle, #history svg #uploadChart polyline {
+  stroke: #1A8EF3;
+}
+#history svg #uploadChart circle, #history svg #uploadChart text {
+  fill: #1A8EF3;
+}
+#history table tr:hover td {
+  background-color: var(--backgroundAltColor);
+}
+#history table th, #history table td {
+  line-height: 1.4em;
+  vertical-align: middle;
+}
+#history table th a, #history table td a {
+  padding: 0;
+}
+#history #go-landscape {
+  display: none;
+}
+#history #go-landscape #device-wrapper {
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 90px;
+  height: 155px;
+}
+#history #go-landscape #device-wrapper * {
+  box-sizing: content-box;
+}
+#history #go-landscape #device-wrapper #device {
+  width: 80px;
+  height: 120px;
+  margin: 40px 0 0 0;
+  border: 5px var(--phoneColor) solid;
+  border-top-width: 15px;
+  border-bottom-width: 20px;
+  border-radius: 4px;
+  animation: device 2s ease-in-out infinite;
+}
+#history #go-landscape #device-wrapper #device:before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 3px;
+  margin: -9px auto;
+  background: var(--phoneColorDark);
+  border-radius: 4px;
+}
+#history #go-landscape #device-wrapper #device:after {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 4px auto;
+  background: var(--phoneColorDark);
+  border-radius: 10px;
+}
+#history #go-landscape #device-wrapper #device #device-screen {
+  width: 60px;
+  height: 100px;
+  margin: 15px 0 0 0;
+  padding: 10px;
+  background: var(--screenColor);
+  color: var(--screenColorDark);
+  font-size: 0.5em;
+  overflow: hidden;
+}
+#history #go-landscape #device-wrapper #device #device-screen ul {
+  margin: 0;
+  padding: 0;
+  transform-origin: center;
+  transform: rotate(90deg) translateX(13px) scaleX(1.7);
+  animation: screen-lines 2s ease-in-out infinite;
+}
+#history #go-landscape #device-wrapper #device #device-screen li {
+  height: 6px;
+  margin: 0 0 5px 0;
+  list-style: none;
+  border-color: var(--screenColorDark);
+  background: var(--screenColorDark);
+}
+#history #go-landscape #device-wrapper #device #device-screen li:nth-child(2) {
+  width: 75%;
+}
+#history #go-landscape #device-wrapper #device #device-screen li:nth-child(5) {
+  width: 60%;
+}
+#history #go-landscape #device-wrapper #device #device-screen li:nth-child(7) {
+  width: 90%;
+}
+#history #go-landscape p {
+  text-align: center;
+}
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+  #history #go-landscape {
+    display: block;
+  }
+  #history svg, #history table {
+    display: none;
+  }
+}
+
+@keyframes device {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+}
+@keyframes screen-lines {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#share .img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --blue: #007bff;
+  --darkBlue: #0056b3;
+  --red: #dc3545;
+  --darkRed: #c82333;
+  --phoneColor: #494f54;
+  --phoneColorDark: #25282b;
+  --screenColor: #f5f5f5;
+  --screenColorDark: #e8e8e8;
+  --backgroundColor: #1a1a1a;
+  --backgroundAltColor: #303030;
+  --textColor: white;
+  --primaryColor: #cccccc;
+  --borderColor: #dee2e6;
+  --fontFamilySansSerif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontFamilyMonospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --fontSize: 1em;
+}
+
+::selection {
+  background: var(--blue);
+  color: white;
+}
+
+html.light {
+  --backgroundColor: white;
+  --backgroundAltColor: whitesmoke;
+  --textColor: black;
+  --primaryColor: #333333;
+}
+
+#speedtest {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  max-width: 640px;
+  text-align: center;
+}
+#speedtest #actions, #speedtest #timestamp, #speedtest #ip {
+  width: 100%;
+}
+#speedtest #latency, #speedtest #jitter, #speedtest #download, #speedtest #upload {
+  width: 25%;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest #latency, #speedtest #jitter, #speedtest #download, #speedtest #upload {
+    width: 50%;
+  }
+}
+#speedtest #actions {
+  padding: 1em 0;
+}
+#speedtest #actions #timestamp {
+  display: none;
+  padding-top: 1em;
+}
+#speedtest #gauge {
+  width: 80%;
+  margin: 0 auto -10%;
+}
+#speedtest #gauge .gauge {
+  max-height: 400px;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest #gauge .gauge {
+    max-height: 260px;
+  }
+}
+#speedtest #gauge .result {
+  padding: 0;
+  font-size: 2em;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest #gauge .result {
+    font-size: 1.2em;
+  }
+}
+#speedtest #progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+#speedtest #progress.progress {
+  display: flex;
+  height: 3px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background: none;
+  border-radius: 0.25rem;
+  overflow: visible;
+}
+#speedtest #progress.progress .progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #007bff;
+  transition: width 0.6s ease;
+  background: var(--blue);
+  box-shadow: 0 0 5px var(--blue);
+}
+#speedtest .result {
+  padding: 1em 0;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest .result {
+    padding: 0.5em 0;
+  }
+}
+#speedtest .result label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-bottom: 0.2em;
+  transition: color 0.6s ease;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest .result label {
+    font-size: 1em;
+  }
+}
+#speedtest .result.active label {
+  color: var(--blue);
+}
+#speedtest .result .ip, #speedtest .result .org {
+  display: block;
+}
+#speedtest .result .value {
+  font-size: 2em;
+  font-weight: lighter;
+  line-height: 1em;
+  color: var(--primaryColor);
+}
+@media only screen and (max-width: 640px) {
+  #speedtest .result .value {
+    font-size: 2.4em;
+  }
+}
+#speedtest .result .value:empty::before {
+  content: "0.00";
+}
+#speedtest .result .value.ip:empty::before {
+  content: "___.___.___.___";
+}
+#speedtest .result .unit {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+@media only screen and (max-width: 640px) {
+  #speedtest .result .unit {
+    display: block;
+    font-size: 0.9em;
+  }
+}
+#speedtest .result .org {
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+#speedtest.ready {
+  align-items: center;
+  margin: auto;
+}
+#speedtest.ready #timestamp, #speedtest.ready #gauge, #speedtest.ready #latency, #speedtest.ready #jitter, #speedtest.ready #download, #speedtest.ready #upload, #speedtest.ready #ip {
+  display: none;
+}
+#speedtest.ready #actions {
+  padding: 0;
+}
+#speedtest.ready #actions button#start {
+  width: 160px;
+  font-size: 1.6em;
+}
+#speedtest.done #actions #timestamp {
+  display: block;
+}
+#speedtest.done #gauge {
+  display: none;
+}
+#speedtest.done #latency, #speedtest.done #jitter, #speedtest.done #download, #speedtest.done #upload {
+  width: 50%;
+}
+
+/*# sourceMappingURL=app.css.map */

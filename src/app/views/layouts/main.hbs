@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#f5f5f5">
+	<title>SkyNet - SpeedTest</title>
+	<meta name="description" content="An HTML 5 speed test." />
+	
+	<link rel="stylesheet" href="/public/css/app.css">
+	<link rel="stylesheet" href="/public/css/gauge.css">
+	<link rel="stylesheet" href="/public/css/style.css">
+
+	<link rel="manifest" href="/public/assets/manifest.json">
+	<link rel="icon" href="/public/assets/favicon.ico">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+	<div id="main">
+		<header>
+			<h1>
+				<a href="/">
+					<span id="logo" class="logo"></span>
+					<span id="title">SkyNet</span>
+				</a>
+			</h1>
+
+			<nav id="commands">
+				<a class="btn-link" href="https://web.whatsapp.com/send?phone=15551234567" title="Whatsapp support" target="_blank">
+					<i class="fab fa-whatsapp"></i>
+				</a>
+				<a class="btn-link" href="#about" title="Get information about this speed test" open-section>
+					<i class="icon icon-info"></i>
+				</a>
+				<a class="btn-link" href="#history" title="History of previous results" open-section>
+					<i class="icon icon-history"></i>
+				</a>
+				<a class="btn-link" href="#settings" title="Configure the speed test settings" open-section>
+					<i class="icon icon-cog"></i>
+				</a>
+			</nav>
+		</header>
+
+		<section id="alerts">
+			<div id="ie-alert" class="alert alert-warning alert-dismissible" hidden>
+				<span class="message">Internet Explorer is not a <a href="about#supported-browsers">suported
+						browser</a>.</span>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+			</div>
+			<div id="unknown-results-alert" class="alert alert-error alert-dismissible" hidden>
+				<span class="message">No corresponding results were found in the server.</span>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+			</div>
+		</section>
+
+		{{{body}}}
+		
+	</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="/public/js/site.js"></script>
+<script src="/public/js/svg-gauge.js"></script>
+<script src="/public/js/speedtest.js"></script>
+
+</html>
