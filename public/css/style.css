@@ -50,6 +50,10 @@ body {
 	}
 }
 
+article h3 {
+	color: var(--blue);
+}
+
 section {
 	flex: 1;
 }
@@ -60,6 +64,11 @@ m-0 {
 
 p-0 {
 	padding: 0;
+}
+
+.icon-fw {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 /* alerts */
@@ -426,7 +435,7 @@ header #commands .btn-link {
 /* '' */
 /* logo */
 .logo {
-	background-image: url("./images/logo.svg");
+	background-image: url("../images/logo.svg");
 }
 
 /* settings */
@@ -802,7 +811,7 @@ legend {
 	margin-bottom: .5rem;
 	font-size: 1.5rem;
 	line-height: inherit;
-	color: inherit;
+	color: var(--blue);
 	white-space: normal;
 }
 

@@ -12,6 +12,16 @@ ExpressApp.use(config.publicPath, Express.static(path.public));
 ExpressApp.use(Express.json());
 ExpressApp.use(Express.urlencoded({ extended: true }));
 
+// ExpressApp.use((req, res, next) => {
+//   if (!req.secure) {
+//     return res.redirect('https://' + req.headers.host + req.url);
+//   }
+//   next();
+// });
+ExpressApp.use('/sw.js', async function(req, res, next) {
+  return res.sendFile(path.public + '/js/sw.js');
+});
+
 ExpressApp.engine(config.viewExtension, ExpressHandlebars({
   extname: config.viewExtension,
   layoutsDir: path.layout,

@@ -1,0 +1,10 @@
+[
+  {
+    "name": "SkyNet",
+    "server": "//localhost:3333/",
+    "dlURL": "garbage",
+    "ulURL": "empty",
+    "pingURL": "empty",
+    "getIpURL": "getIP"
+  }
+]

@@ -56,97 +56,95 @@
 
 <!-- Page About -->
 <section id="about" class="d-none">
-  <h2>About the Speed Test</h2>
+  <h2>Sobre o teste de velocidade</h2>
 
   <p id="version">
-    <strong>Version:</strong> {{VERSION}} built on {{BUILD_DATE}}
+    <strong>Versão:</strong> 1.0v built on 21/01/2022
   </p>
 
   <ul>
-    <li><a href="#what-does-it-measure">What does it measure?</a></li>
-    <li><a href="#indicators-meaning">What is the meaning of each indicator?</a></li>
-    <li><a href="#supported-browsers">What are the supported browsers?</a></li>
-    <li><a href="#source-code">Where can I review the source code?</a></li>
+    <li><a href="#what-does-it-measure">O que mede?</a></li>
+    <li><a href="#indicators-meaning">Qual é o significado de cada indicador?</a></li>
+    <li><a href="#supported-browsers">Quais são os navegadores suportados?</a></li>
+    <li><a href="#how-test">Como realizar o teste?</a></li>
   </ul>
 
+  <p>
+    O Skynet Speed Test é um medidor de velocidade Internet completo que verifica, além de sua banda de download, diversas métricas de qualidade Internet que afetam diretamente a navegação e utilização da rede.
+  </p>
+
   <article id="what-does-it-measure" class="entry">
-    <h3>What does it measure?</h3>
-    <p>This speed test provides you with information on four simple indicators about your Internet
-      connection:
+    <h3>O que mede?</h3>
+    <p>Este teste de velocidade fornece informações sobre quatro indicadores simples sobre sua conexão com a internet:
     </p>
     <table class="table">
       <thead>
         <tr>
-          <th>Indicator</th>
-          <th>What is tested?</th>
-          <th>Measurement</th>
+          <th>Indicador</th>
+          <th>O que é testado?</th>
+          <th>Medição</th>
+          <th>Recomendado</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>latency</td>
-          <td>delay between you and the server</td>
-          <td>reaction time</td>
+          <td>latência (Ping)</td>
+          <td>atraso entre você e o servidor</td>
+          <td>tempo de reação</td>
+          <td> ~ 30 ms</td>
         </tr>
         <tr>
           <td>jitter</td>
-          <td>variation of the delay</td>
-          <td>stability</td>
+          <td>variação do atraso</td>
+          <td>estabilidade</td>
+          <td> ~5 ms</td>
         </tr>
         <tr>
           <td>download</td>
-          <td>rate of data receiving</td>
-          <td>download speed</td>
+          <td>taxa de recebimento de dados</td>
+          <td>velocidade de download</td>
+          <td> > 10MB </td>
         </tr>
         <tr>
           <td>upload</td>
-          <td>rate of data sending</td>
-          <td>upload speed</td>
+          <td>taxa de envio de dados</td>
+          <td>velocidade de upload</td>
+          <td> > 5MB</td>
         </tr>
       </tbody>
     </table>
   </article>
 
   <article id="indicators-meaning">
-    <h3>What is the meaning of each indicator?</h3>
-
-    <h4>Latency is the responsiveness of your connection</h4>
-    <p>When it is low, it indicates that the information takes little time to travel between you and the
-      server.
-      The lower it is, the more information flows "in real time". It generally reflects the distance
-      traved by
-      data between you and the server.</p>
-
-    <h4>Jitter is the stability of your connection</h4>
-    <p>When it is low, it indicates that latency does not vary much and that your connection is stable. On
-      the
-      contrary, when it rises, it indicates that the reactivity of your connection can vary greatly from
-      one
-      data exchange to another.</p>
-
-    <h4>The download and upload speed are the size of your connection</h4>
-    <p>When it is high, a lot of data can be exchanged in a short time between you and the server. This
-      makes it
-      possible to retrieve and send large files faster.</p>
+    <h3>Qual é o significado de cada indicador?</h3>
+    <h4>A latência é a capacidade de resposta da sua conexão</h4>
+    <p>Quando está baixo, indica que a informação leva pouco tempo para viajar entre você e o servidor. Quanto mais baixo, mais informação flui "em tempo real". Geralmente reflete a distância percorrido por dados entre você e o servidor.</p>
+    <h4>Jitter é a estabilidade da sua conexão</h4>
+    <p>Quando está baixo, indica que a latência não varia muito e que sua conexão está estável. Quando for alto, indica que a reatividade da sua conexão pode variar muito entre uma troca de dados entre você e o servidor.</p>
+    <h4>A velocidade de download e upload são do tamanho da sua conexão</h4>
+    <p>Quando está alto, mais dados podem ser trocados em pouco tempo entre você e o servidor. Sendo assim possível recuperar e enviar arquivos grandes mais rapidamente.</p>
   </article>
 
   <article id="supported-browsers">
-    <h3>What are the supported browsers?</h3>
-    <p>This speed test should operate normally on all modern browsers, including the latest version of <a
-        href="https://www.google.com/chrome/" target="_blank" rel="noopener">Google Chrome</a>, <a
-        href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener">Mozilla Firefox</a>,
-      <a href="https://www.microsoft.com/windows/microsoft-edge" target="_blank" rel="noopener">Microsoft
-        Edge</a>, <a href="https://www.apple.com/safari/" target="_blank" rel="noopener">Apple
-        Safari</a> and <a href="https://www.opera.com/" target="_blank" rel="noopener">Opera</a>.
+    <h3>Quais são os navegadores suportados?</h3>
+    <p>Este teste de velocidade deve funcionar normalmente em todos os navegadores modernos, incluindo a versão mais recente do 
+      <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">Google Chrome</a>, 
+      <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener">Mozilla Firefox</a>,
+      <a href="https://www.microsoft.com/windows/microsoft-edge" target="_blank" rel="noopener">Microsoft Edge</a>, 
+      <a href="https://www.apple.com/safari/" target="_blank" rel="noopener">Apple Safari</a> e 
+      <a href="https://www.opera.com/" target="_blank" rel="noopener">Opera</a>.
     </p>
-    <p>However, no version of Internet Explorer is officially supported.</p>
+    <p>No entanto, nenhuma versão do Internet Explorer é oficialmente suportada.</p>
   </article>
 
-  <article id="source-code">
-    <h3>Where can I review the source code?</h3>
-    <p>This speed test is completely open source. Its source code can be reviewed online, on its GitHub
-      repository: <a href="https://github.com/e7d/speedtest" target="_blank"
-        rel="noopener">https://github.com/e7d/speedtest</a></p>
+  <article id="how-test">
+    <h3>Como realizar o teste?</h3>
+    <ul>
+      <li>Se possível utilizar um dispositivo com cabo para garantir maior precissão na medição final.</li>
+      <li>Se possível utilizar somente um dispositivo conectado a rede (o dispositvo que vai realizar o teste).</li>
+      <li>Evitar o uso de outras aplicações ou serviços (mesmo em outros dispositivos) que façam uso de banda Internet simultaneamente com a realização do teste.</li>
+      <li>Caso faça uso de rede Wi-Fi, manter o dispositivo fisicamente próximo ao roteador ou modem para reduzir possíveis interferências.</li>
+    </ul>
   </article>
 </section>
 
@@ -301,43 +299,43 @@
   </form>
 </section>
 
-<section id="share" class="d-none">
+<section id="sharedata" class="d-none">
   <div class="text-center">
-    <img id="share-result-image-preview" class="img-thumbnail" alt="Speed Test results">
+    <img class="img-thumbnail" alt="Speed Test results">
   </div>
   <fieldset>
-    <label for="share-result-link">Web</label>
+    <label>Web</label>
     <div class="input-group">
-      <input id="share-result-link" type="text" readonly>
+      <input type="text" readonly>
       <div class="input-group-append">
-        <button id="share-result-link-copy" class="btn-outline-secondary" type="button" aria-label="Copy">Copy</button>
+        <button class="btn-outline-secondary" type="button" aria-label="Copy" clickcopy>Copiar</button>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <label for="share-result-image">Image</label>
+    <label>Image</label>
     <div class="input-group">
-      <input id="share-result-image" type="text" readonly>
+      <input type="text" readonly>
       <div class="input-group-append">
-        <button id="share-result-image-copy" class="btn-outline-secondary" type="button" aria-label="Copy">Copy</button>
+        <button class="btn-outline-secondary" type="button" aria-label="Copy" clickcopy>Copiar</button>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <label for="share-result-embed">Embed</label>
+    <label>Embed</label>
     <div class="input-group">
-      <input id="share-result-embed" type="text" readonly>
+      <input type="text" readonly>
       <div class="input-group-append">
-        <button id="share-result-embed-copy" class="btn-outline-secondary" type="button" aria-label="Copy">Copy</button>
+        <button class="btn-outline-secondary" type="button" aria-label="Copy" clickcopy>Copiar</button>
       </div>
     </div>
   </fieldset>
   <fieldset>
-    <label for="share-result-forum">Forum</label>
+    <label>Forum</label>
     <div class="input-group">
-      <input id="share-result-forum" type="text" readonly>
+      <input type="text" readonly>
       <div class="input-group-append">
-        <button id="share-result-forum-copy" class="btn-outline-secondary" type="button" aria-label="Copy">Copy</button>
+        <button class="btn-outline-secondary" type="button" aria-label="Copy">Copiar</button>
       </div>
     </div>
   </fieldset>

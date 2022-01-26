@@ -1,6 +1,7 @@
 {
-  "short_name": "Speed Test",
-  "name": "Speed Test",
+  "short_name": "SkyNet SpeedTest",
+  "name": "SkyNet SpeedTest",
+  "description": "Test your speed internet direct from server SkyNet.",
   "icons": [
     {
       "src": "icon-128x128.png",
@@ -33,6 +34,7 @@
       "sizes": "512x512"
     }
   ],
+  "lang": "pt-BR",
   "start_url": "/",
   "background_color": "white",
   "display": "standalone",
